@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Revisa tu pedido y completa el formulario de compra de Sonora."
+    />
+    <title>Finalizar compra | Sonora</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="store-name" href="./index.html">SONORA</a>
+        <nav class="section-links" aria-label="Secciones de la tienda">
+          <a href="./index.html">Inicio</a>
+          <a href="./guitarras.html">Guitarras y Bajos</a>
+          <a href="./pianos.html">Pianos y Teclados</a>
+        </nav>
+        <nav class="header-links" aria-label="Enlaces de usuario">
+          <button class="header-action" id="account-button" type="button">Cuenta</button>
+          <button class="header-action" id="cart-button" type="button">Carrito (0)</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <a class="btn btn-outline-secondary mb-4" href="./index.html">← Volver a la tienda</a>
+      <h1 class="mb-4">Finalizar compra</h1>
+      <div class="row g-4">
+        <section class="col-md-7" aria-labelledby="checkout-title">
+          <form id="checkout-form">
+            <h2 id="checkout-title" class="h4 mb-3">Datos de Envío</h2>
+
+            <div class="mb-3">
+              <label class="form-label" for="full-name">Nombre completo</label>
+              <input
+                class="form-control"
+                id="full-name"
+                name="full-name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="email">Correo electrónico</label>
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="address">Dirección</label>
+              <input
+                class="form-control"
+                id="address"
+                name="address"
+                type="text"
+                autocomplete="street-address"
+                required
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-7 mb-3">
+                <label class="form-label" for="city">Ciudad</label>
+                <input
+                  class="form-control"
+                  id="city"
+                  name="city"
+                  type="text"
+                  autocomplete="address-level2"
+                  required
+                />
+              </div>
+              <div class="col-sm-5 mb-3">
+                <label class="form-label" for="postal-code">Código Postal</label>
+                <input
+                  class="form-control"
+                  id="postal-code"
+                  name="postal-code"
+                  type="text"
+                  autocomplete="postal-code"
+                  required
+                />
+              </div>
+            </div>
+
+            <h2 class="h4 mb-3 mt-4">Datos de Pago</h2>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                id="payment-card"
+                name="payment-method"
+                type="radio"
+                value="card"
+                checked
+              />
+              <label class="form-check-label" for="payment-card">
+                Tarjeta de crédito/débito
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                id="payment-alternative"
+                name="payment-method"
+                type="radio"
+                value="alternative"
+              />
+              <label class="form-check-label" for="payment-alternative">
+                PayPal / Bizum
+              </label>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="card-number">Número de tarjeta</label>
+              <input
+                class="form-control"
+                id="card-number"
+                name="card-number"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="No se almacenará ni enviará"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-7 mb-3">
+                <label class="form-label" for="card-expiry">Fecha de caducidad (MM/AA)</label>
+                <input
+                  class="form-control"
+                  id="card-expiry"
+                  name="card-expiry"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="MM/AA"
+                />
+              </div>
+              <div class="col-sm-5 mb-3">
+                <label class="form-label" for="card-cvv">CVV</label>
+                <input
+                  class="form-control"
+                  id="card-cvv"
+                  name="card-cvv"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  placeholder="No se almacenará ni enviará"
+                />
+              </div>
+            </div>
+
+            <button class="btn btn-info w-100 text-white fw-bold mt-3" type="submit">
+              Pagar y finalizar compra
+            </button>
+          </form>
+
+          <div
+            class="d-none mt-3"
+            id="checkout-feedback"
+            role="alert"
+            aria-live="polite"
+          ></div>
+        </section>
+
+        <aside class="col-md-5" aria-labelledby="order-summary-title">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title h4" id="order-summary-title">
+                Resumen de tu pedido
+              </h2>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Artículos</span>
+                  <strong id="checkout-items">0 artículos</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Gastos de envío</span>
+                  <strong class="text-success">Gratis</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total estimado</span>
+                  <strong id="checkout-total">0,00 €</strong>
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

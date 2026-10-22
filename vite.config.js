@@ -9,6 +9,14 @@ export default defineConfig({
         port: 3000
     },
     build: {
-        outDir: 'dist'
+        outDir: 'dist',
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                guitars: 'guitarras.html',
+                pianos: 'pianos.html',
+                checkout: 'pago.html'
+            }
+        }
     }
 })
