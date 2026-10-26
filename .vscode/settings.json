@@ -7,5 +7,6 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "githubPullRequests.ignoredPullRequestBranches": ["main"]
+  "githubPullRequests.ignoredPullRequestBranches": ["main"],
+  "python.terminal.useEnvFile": true
 }

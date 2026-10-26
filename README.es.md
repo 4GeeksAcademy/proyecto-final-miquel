@@ -31,6 +31,18 @@ Se recomienda instalar el backend primero, asegúrate de tener Python 3.10, Pipe
 
 > Nota: Los usuarios de Codespaces pueden conectarse a psql escribiendo: `psql -h localhost -U gitpod example`
 
+### Catálogo, cuentas y pedidos
+
+Después de aplicar las migraciones, carga los productos iniciales con:
+
+```sh
+pipenv run insert-test-data
+```
+
+La aplicación ofrece registro e inicio de sesión con tokens, catálogo consultado desde la base de datos, carrito asociado a cada cuenta e historial de pedidos. El checkout registra el pedido con estado de pago pendiente; hace falta integrar un proveedor de pagos para aceptar tarjetas y completar cargos.
+
+En desarrollo, Vite envía las solicitudes `/api` al backend local del puerto 3001. En producción, el frontend usa la API del mismo servicio. Configura `JWT_SECRET_KEY` en producción; el archivo de despliegue de Render genera esta clave automáticamente.
+
 ### Deshacer una migración
 
 También puedes deshacer una migración ejecutando
